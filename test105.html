@@ -1,148 +1,136 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>斯特沃克test 102</title>
+        <title>test 105-练习 - Bootstrap 简历</title>
         <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.css">
         <script src="./jquery-3.2.1.js"></script>        
         <script src="./bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     </head>
     <style>
-        li{list-style: none;}
-        body{width: 60%;margin: 0 auto;}
+        body{width:80%;margin: 0 auto;height: 107%;border: 3px #326d8a solid;padding: 20px;max-width: 1200px;min-width: 1000;}
+        .left_part{width:70%;}
+        .right_part{width:25%;margin-left: 20px;}
+        .bg-title{font-size:25px;margin-top: 20px;}
     </style>
 <body>
-    <h1>统一建模语言理论测试</h1>
-    <table class="table table-striped table-hover">
-        <tbody>
-        <tr>
-            <td>考试科目：统一建模语言</td>
-            <td>时间：100分钟</td>
-            <td>得分：100</td>
-        </tr>
-        <tr>
-            <td>班级：<input type="text" name="personClass" class="form-control" style="width:82%;float: right;" value="1班"></td>
-            <td>学号：<input type="text" name="personId" class="form-control" style="width:82%;float: right;" value="001"></td>
-            <td>姓名：<input type="text" name="personName" class="form-control" style="width:82%;float: right;" value="王小闹"></td>
-        </tr>
-        </tbody>
-    </table>
+    <div style="background: cadetblue;">
+        <p class="text-center"><img style="width: 200px;border-radius: 15px;margin-top: 10px;" src="./test104.jpg"></p>
+        <p class="text-center" style="color: aliceblue;font-size: 30px;">HELLO</p>
+        <p class="text-center" style="color: aliceblue;">MY NAME IS OUCHUNRUN <sup>22 YO</sup>AND THIS IS MY RESUME/CV</p>
+        
+        <!-- 左边 -->
+        <div class="left_part pull-left">
+            <p class="bg-success" style="font-size:25px;">//About me</p>
+            <p class="text-left">i'm an optimistic,energetic,outgoing,active,humorous girl with any amount of hobbies,such as listening to music and writing my blog.what deserves to be introduced is my blog on sina,which takes me a lot of pains.it's without much gaudy decorations,but many articles which are really worth reading.the website address is here.yourprensence and guidance are requested.</p>
 
+            <div style="width:100%;">
+                <p class="bg-warning"  style="font-size:25px;">//Education</p>
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <td style="width: 25%;">2014</td>
+                            <td>Admitted to North China University of Technology</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 25%;">2015</td>
+                            <td>A year of college life, very busy, but in addition to learning, nothing to do, wasted for a year</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 25%;">2016</td>
+                            <td>Into the laboratory, with their own things, every day three lines very happy very full, but still not enough effort, I hope now do not let the future of their own shame</td>
+                        </tr>
+                        <tr>
+                            <td style="width: 25%;">2017</td>
+                            <td>Time flies, I am a senior, and faced with graduation we suddenly feel very confused, do not know what the front waiting for us, after years of what we look like</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-    <h3>一、填空题（每空5分，共20分）</h2>
-        <form class="form-inline">
-          <div class="form-group">
-            <label>1.UML的中文全称是：</label>
-            <input type="text" class="form-control" value="统一建模语言" >
-          </div>
-        </form>
+            <div>
+                <p class="bg-info" style="font-size:25px;">//Eperience</p>
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3">2016.09至2017.01</div>
+                    <div class="col-xs-12 col-sm-8">The project is a multi-terminal commuter car reservation system for all the faculty and staff, the commuter car management department and the Tangshan city bus company, which is a set of online reservation, row seat, optimal route generation and commuter dispatching.</div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3">2016.03-2017.03</div>
+                    <div class="col-xs-12 col-sm-8">"India delivery" O2O one-stop seal custom platform in the realization of basic e-commerce functions based on the realization of the seal of the custom configurable service, is the first seal custom e-commerce platform.</div>
+                </div>
+            </div>
 
-        <form class="form-inline">
-          <div class="form-group">
-            <label>2.对象最突出的特征是：</label>
-            <input class="form-control" name="character" type="text" value="封装性">
-            <input class="form-control" name="character"  type="text" value="继承性">
-            <input class="form-control" name="character"  type="text" value="多态性">
-          </div>
-        </form>
-
-    <h3>二、选择题（每题10分，共20分）</h2>
-        <label>1.UML与软件工程的关系是：</label>
-        <div class="radio">
-            <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">(A)UML就是软件工程
-            </label>
         </div>
-        <div class="radio">
-            <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">(B)UML参与到软件工程中软件开发过程的几个阶段
-            </label>
-        </div>
-        <div class="radio">
-            <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">(C)UML与软件工程无关
-            </label>
-        </div>
-        <div class="radio">
-            <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">(D)UML是软件工程的一部分
-            </label>
-        </div>
+        <!-- 右边 -->
+        <div class="right_part pull-right">
+            <p class="bg-info" style="font-size:25px;">//Contact</p>
+                <div class="row">
+                    <div class="col-xs-1 col-sm-1"><span class="glyphicon glyphicon-earphone"></span></div>
+                        <div class="col-xs-2 col-sm-3">15823125357</div>
+                </div>
+                <br>
 
-        <label>2.Java语言支持：</label>
-        <div class="radio">
-            <label>
-                <input type="radio" name="javaSupport" id="optionsRadios1" value="option1">(A)单继承
-            </label>
-        </div>
-        <div class="radio">
-            <label>
-                <input type="radio" name="javaSupport" id="optionsRadios1" value="option1">(B)多继承
-            </label>
-        </div>
-        <div class="radio">
-            <label>
-                <input type="radio" name="javaSupport" id="optionsRadios1" value="option1">(C)单继承和多继承都支持
-            </label>
-        </div>
-        <div class="radio">
-            <label>
-                <input type="radio" name="javaSupport" id="optionsRadios1" value="option1">(D)单继承和多继承都不支持
-            </label>
-        </div>
+                <div class="row">
+                    <div class="col-xs-1 col-sm-1"><span class="glyphicon glyphicon-envelope"></span></div>
+                    <div class="col-xs-2 col-sm-3">427801387@qq.com</div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-xs-1 col-sm-1 "><span class="glyphicon glyphicon-earphone"></span></div>
+                    <div class="col-xs-2 col-sm-3">https://ouchunrun.github.io</div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <div class="col-xs-1 col-sm-1"><span class="glyphicon glyphicon-envelope"></span></div>
+                    <div class="col-xs-2 col-sm-3">https://github.com/ouou</div>
+                </div>
 
 
-    <h3>三、多择题（每题10分，共20分）</h2>
-        <label>1.用例的粒度分为以下哪三种：</label>
-        <div class="checkbox">
-            <label style="width:23%;">
-                <input name="granularity" type="checkbox">(A)概述级
-            </label>
-            <label style="width:23%;">
-                <input name="granularity" type="checkbox">(B)需求级
-            </label>
-            <label style="width:23%;">
-                <input name="granularity" type="checkbox">(C)用户目标级
-            </label>
-            <label style="width:23%;">
-                <input name="granularity" type="checkbox">(D)子功能级
-            </label>
+            <p class="bg-warning bg-title">//Skills</p>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascritp</li>
+                <li>jQuery</li>
+                <li>bootstrap</li>
+                <li>nodejs</li>
+                <li>react</li>
+                <li>DOM</li>
+            </ul>
+
+            <p class="bg-success bg-title">//Languages</p>
+
+            <div class="row">
+                    <div class="col-xs-8 col-sm-3">Chinese</div>
+                        <div class="col-xs-8 col-sm-8">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                        </div>
+                </div>
+                <br>
+
+                <div class="bg-danger" class="row">
+                    <div class="col-xs-8 col-sm-3">English</span></div>
+                    <div class="col-xs-8 col-sm-8">
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                    </div>
+                </div>
+                <br>
+
+
+            <p class="bg-danger bg-title">//Habbies</p>
+            <ul>
+                <li>Knock code</li>
+                <li>watch movie</li>
+                <li>listen to music</li>
+            </ul>
         </div>
+    </div>
 
-
-        <label>2.类图由以下哪三个部分组成：</label>
-        <div class="checkbox">
-            <label style="width:23%;">
-                <input name="granular" type="checkbox">(A)名称(Name)
-            </label>
-            <label style="width:23%;">
-                <input name="granular" type="checkbox">(B)属性(Attribute)
-            </label>
-            <label style="width:23%;">
-                <input name="granular" type="checkbox">(C)操作(Operation)
-            </label>
-            <label style="width:23%;">
-                <input name="granular" type="checkbox">(D)方法(Function)
-            </label>
-        </div>
-
-
-    <h3>四、判断题（每题10分，共20分）</h2>
-    <lable>1.用例图只是用于和客户交流和沟通的，用于确定需求。
-        <input name="judge1" type="radio">  <span class="glyphicon glyphicon-ok"></span>
-        <input name="judge1" type="radio"> <span class="glyphicon glyphicon-remove"></span>
-    </lable>
-    <br>
-    <lable>2.在状态图中，终止状态在一个状态图中允许有任意多个。
-        <input name="judge2" type="radio"><span class="glyphicon glyphicon-ok"></span>
-        <input name="judge2" type="radio"><span class="glyphicon glyphicon-remove"></span>
-    </lable>
-
-
-    <h3>五、简答题（每题20分，共20分）</h2>
-    <lable>1.简述什么是模型以及模型的表现形式？</lable>
-    <textarea name="resume" id="resume"  class="form-control" rows="3">模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式：可以是物理实体；可以是某种图形；或者是另一种数学表达式。
-    </textarea>
-    <br>
-    <input class="btn btn-default" type="submit" value="计算分数">
 </body>
 </html>
