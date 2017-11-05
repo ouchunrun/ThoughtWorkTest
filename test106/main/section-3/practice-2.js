@@ -11,6 +11,5 @@ module.exports = function createUpdatedCollection(collectionA, objectB) {
     	}
     	result.push(collectionA[i])
     }
-    console.log(result)
     return result;
 }
