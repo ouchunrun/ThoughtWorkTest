@@ -1,10 +1,25 @@
 'use strict';
 
 function compute_median(collection) {
-    //从大到小排序
-    var item = collection.split("->");
+  //在这里写入代码
+  var result = compute_chain_median(collection);
+  return result;
 }
 
+
+function compute_chain_median(collection) {
+  //在这里写入代码
+  if(typeof(collection) == "string"){
+    collection = collection.split("->");
+  }
+  collection = collection.sort(function(a, b){return a - b});
+  var len = collection.length;
+  if(len%2){
+  	return collection[parseInt(len/2)];  
+  }else{
+  	return (parseInt(collection[len/2-1]) + parseInt(collection[len/2]))/2;
+  }
+}
+
+
 module.exports = compute_median;
-
-
