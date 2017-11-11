@@ -40,7 +40,7 @@ function hasItem(result, item){
 function handleItem(itemSplit){
 	var item = "";
 	for(var i=2;i<itemSplit.length;i++){
-		if(!isNaN(itemSplit[i])){
+		if(!isNaN(itemSplit[i])){   //判断是否为数字
 			item += itemSplit[i];
 		}
 	}
