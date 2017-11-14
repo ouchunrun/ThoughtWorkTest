@@ -5,7 +5,8 @@
 
 一上午时间， 本来想加一个细腻一点的计时器，但考虑到还有很多任务，暂时还是不做了吧。
 
-https://school.thoughtworks.cn/bbs/assets/uploads/files/1510623596629-%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6.png
+![108流程图](https://school.thoughtworks.cn/bbs/assets/uploads/files/1510623596629-%E6%9C%AA%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6.png
+)
 
 ##############################################################################
 ## 2017-11-6  完成任务卡107
