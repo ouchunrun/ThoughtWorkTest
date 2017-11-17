@@ -1,31 +1,27 @@
 const datbase = require('../main/datbase');
 var inputs = datbase.inputs;
-var loadAllItems = datbase.loadAllItems;
-var loadPromotions = datbase.loadPromotions;
-var list = [];
-var expectText = "***<没钱赚商店>购物清单***\n";
+var	loadAllItems = datbase.loadAllItems; 
+var	loadPromotions = datbase.loadPromotions;
+var	list = [];
+var	expectText = "***<没钱赚商店>购物清单***\n";
 
 module.exports = function main() {
-	
 	for(var i of inputs){
-		var judge = isExist(i);
-		
-		var weigh = i.split("-");
+		var item = {};
+		var	judge = isNotExist(i); //判断该商品是否已计算
+		var	weigh = i.split("-");  //split()分割
 		if(judge){
-			if(weigh[1]){
-				var item = {};
-				item["barcode"] = weigh[0];
-				item["number"] = parseInt(weigh[1]);
-				list.push(item);
+			if(weigh[1]){  //如果是称重商品
+				var length = weigh[1];
 			}
 			else{
-				var length = getLength(i);
-				var item = {};
-				item["barcode"] = weigh[0];
-				item["number"] = length;
-				list.push(item);
+				var length = getLength(i);	//计算每件商品个数
 			}	
+			item["barcode"] = weigh[0];
+			item["number"] = length;
+			list.push(item);
 		}	
+
 	}
 	// console.log(list)
 	/**********以上部分构造了一个新数组，存放商品条形码和数量，形式如下*************/
@@ -36,50 +32,42 @@ module.exports = function main() {
 		    { barcode: 'ITEM000005', number: 3 } 
 	    ]
 	*/
-	printInventory();
+	printDetailedList();
 };
 
 
-function printInventory(){
-	//打印购物单
+//打印购物单
+function printDetailedList(){
 	var str = "";
-	var summary = 0;
-	var save = 0;
+		summary = 0;
+		save = 0;
+
 	for(var i in list){
-		var discount = judgeIsDiscount(list[i].barcode);
-		if(discount){
-			//打折商品
-			for(var j in loadAllItems){
-				var number = list[i].number-1;
-				var total = number*loadAllItems[j].price;
-				total.toFixed(2);
+		var discount = judgeIsDiscount(list[i].barcode);  //判断是否是打折商品
 
-				if(list[i].barcode == loadAllItems[j].barcode){
-					summary += total
+		//打折商品
+		for(var j in loadAllItems){
+			var number = list[i].number
+			if(discount){
+				number = list[i].number-1;
+			}
+			var total = number*loadAllItems[j].price;
+
+			if(list[i].barcode == loadAllItems[j].barcode){
+				
+				if(discount){
 					str += "名称："+ loadAllItems[j].name +"，数量：1"+loadAllItems[j].unit+"\n";
-					var price = loadAllItems[j].price;
-					price =	price.toFixed(2); //JavaScript 保留两位小数的实现方法:
 					save += loadAllItems[j].price;
-					expectText += "名称："+ loadAllItems[j].name + "，数量：" + list[i].number + loadAllItems[j].unit +
-								"，单价："+ price + "(元)，小计：" + total.toFixed(2) +"(元)\n";
 				}
-			}
 
-		}
-		else{
-			for(var j in loadAllItems){
-				var total = list[i].number*loadAllItems[j].price;
-
-				if(list[i].barcode == loadAllItems[j].barcode){
-					summary += total
-					var price = loadAllItems[j].price;
-					price =	price.toFixed(2);
-					expectText += "名称："+ loadAllItems[j].name + "，数量："+ list[i].number + loadAllItems[j].unit +
-								"，单价：" + price + "(元)，小计：" + total.toFixed(2) +"(元)\n";
-				}
+				summary += total;
+				var price = loadAllItems[j].price;
+				// price.toFixed(2); JavaScript 保留两位小数的实现方法:
+				expectText += "名称："+ loadAllItems[j].name + "，数量：" + list[i].number + loadAllItems[j].unit +
+							"，单价："+ price.toFixed(2) + "(元)，小计：" + total.toFixed(2) +"(元)\n";
+				
 			}
-			
-		}
+		}		
 	}
 
  	expectText += "----------------------\n挥泪赠送商品：\n";
@@ -90,6 +78,7 @@ function printInventory(){
  	expectText += "**********************";
  	console.log(expectText)
 }
+
 
 //判断购买商品的个数
 function getLength(barcode){
@@ -102,8 +91,9 @@ function getLength(barcode){
 	return length;
 }
 
+
 //该商品是否已存在，已判断过？
-function isExist(barcode){
+function isNotExist(barcode){
 	for(var i in list){
 		if(list[i].barcode == barcode){
 			return false;
@@ -111,6 +101,7 @@ function isExist(barcode){
 	} 
 	return true;
 }
+
 
 //判断是否是优惠商品
 function judgeIsDiscount(barcode){
