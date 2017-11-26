@@ -1,4 +1,5 @@
 const datbase = require('../main/datbase');
+
 var inputs = datbase.inputs;
 var	loadAllItems = datbase.loadAllItems; 
 var	loadPromotions = datbase.loadPromotions;
@@ -36,10 +37,11 @@ module.exports = function main() {
 };
 
 
+
 //打印购物单
 function printDetailedList(){
-	var str = "";
-		summary = 0;
+	var str = "",
+		summary = 0,
 		save = 0;
 
 	for(var i in list){

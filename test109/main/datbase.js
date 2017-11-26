@@ -70,7 +70,6 @@ function loadPromotions() {
 }
 
 
-
 module.exports.inputs = inputs();
 module.exports.loadAllItems = loadAllItems();
 module.exports.loadPromotions = loadPromotions();
