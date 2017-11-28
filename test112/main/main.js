@@ -1,53 +1,44 @@
 const datbase = require('../main/datbase');
 
-var inputs = datbase.inputs;
 var	loadAllItems = datbase.loadAllItems; 
 var	loadPromotions = datbase.loadPromotions;
-var	list = [];
 var	expectText = "***<没钱赚商店>购物清单***\n";
 
-module.exports = function main() {
+function main(inputs) {
+	let	list = [];
 	for(var i of inputs){
-		var	judge = isNotExist(i);  
-		InitializingArray(judge, i)  
+		var	judge = isNotExist(i, list);  
+		initializingArray(judge, i, inputs, list)  
 	}
-	/*以上构造如下数组：
-		[ 
-			{ barcode: 'ITEM000001', number: 5 },
-		    { barcode: 'ITEM000003', number: 2 },
-		    { barcode: 'ITEM000005', number: 3 } 
-	    ]
-	*/
-	discountAndPrint();
+	return list;
 };
 
 //该商品是否已存在
-function isNotExist(barcode){
+function isNotExist(barcode, list){
 	for(var i in list){
 		if(list[i].barcode == barcode){
-			return false;
+			return true;
 		}
 	} 
-	return true;
+	return false;
 }
 
 //初始化数组
-function InitializingArray(judge, i){
+function initializingArray(judge, i, inputs, list){
 	var item = {};
 	var length;
 	var	weigh = i.split("-");  //split()分割
 
-	if(judge){
-		length = weigh[1]?weigh[1]:getLength(i);	
+	if(!judge){
+		length = weigh[1]?weigh[1]:getLength(i, inputs);	
 		item["barcode"] = weigh[0];
-		item["number"] = weigh[1]?weigh[1]:getLength(i);
+		item["number"] = parseInt(weigh[1]?weigh[1]:getLength(i, inputs));
 		list.push(item);
 	}	
-
 }
 
 //判断购买商品的个数
-function getLength(barcode){
+function getLength(barcode, inputs){
 	var length = 0;
 	for(var i of inputs){
 		if(i == barcode){
@@ -59,7 +50,8 @@ function getLength(barcode){
 
 
 //打印购物单
-function discountAndPrint(){
+function discountAndPrint(inputs){
+	let list = main(inputs);
 	var str = "",
 		summary = 0,
 		save = 0;
@@ -106,3 +98,9 @@ function judgeIsDiscount(barcode){
 	}
 	return false;
 }
+
+module.exports.main = main;
+module.exports.isNotExist = isNotExist;
+module.exports.getLength = getLength;
+module.exports.judgeIsDiscount = judgeIsDiscount;
+module.exports.discountAndPrint = discountAndPrint;

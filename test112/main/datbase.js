@@ -1,18 +1,3 @@
-//输入格式--用户购买的所有商品的条形码
-function inputs() {
-    return [
-        'ITEM000001',
-        'ITEM000001',
-        'ITEM000001',
-        'ITEM000001',
-        'ITEM000001',
-        'ITEM000003-2',
-        'ITEM000005',
-        'ITEM000005',
-        'ITEM000005'
-    ];
-}
-
 //所有商品
 function loadAllItems() {
     return [
@@ -69,7 +54,5 @@ function loadPromotions() {
     ];
 }
 
-
-module.exports.inputs = inputs();
 module.exports.loadAllItems = loadAllItems();
 module.exports.loadPromotions = loadPromotions();
