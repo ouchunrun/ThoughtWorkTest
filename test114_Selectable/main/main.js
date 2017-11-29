@@ -1,7 +1,7 @@
 // Write your cade below:
 
 
-function main(givNb, inptNb){
+module.exports = function main(givNb, inptNb){
 	printInfor(givNb, inptNb);
 
 	let result = "";
@@ -45,6 +45,3 @@ function printInfor(givNb, inptNb){
 	console.log(str);
 }
 
-module.exports.main = main;
-module.exports.bothCorrect = bothCorrect;
-module.exports.numberCorrect = numberCorrect;
