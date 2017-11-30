@@ -1,13 +1,12 @@
 'use strict';
 
 function choose_even(collection) {
-	var result = [];
-	for(var i of collection){
-		if(i % 2 == 0){
-			result.push(i);
-		}
-	}
+	var result = collection.filter(isOdd);
 	return result;
+}
+
+function isOdd(element){
+	return (element % 2 == 0)?true:false;
 }
 
 module.exports = choose_even;

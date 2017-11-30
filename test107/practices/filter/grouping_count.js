@@ -4,14 +4,8 @@ function grouping_count(collection) {
 	var result = {};
 
 	for(var item of collection){
-		var hasItme = jaudge(result, item);
-		//字典的构造
-		if(hasItme){
-			result[item] += 1;
-		}
-		else{
-			result[item] = 1;
-		}
+		var hasItme = jaudge(result, item);		
+		result[item] = hasItme?result[item]+1:1;
 	}
 	return result;
 }

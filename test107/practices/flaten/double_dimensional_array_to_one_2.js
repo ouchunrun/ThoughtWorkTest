@@ -1,14 +1,6 @@
 'use strict';
-var to_one = require("./double_dimensional_array_to_one_1");
 
-function has_collection(result, item){
-	for(var i in result){
-		if(item == i){
-			return true;
-		}
-	}
-	return false;
-}
+var to_one = require("./double_dimensional_array_to_one_1");
 
 function double_to_one(collection) {
 
@@ -23,8 +15,15 @@ function double_to_one(collection) {
   	}
   }
   return result;
+}
 
-  
+function has_collection(result, item){
+  for(var i in result){
+    if(item == i){
+      return true;
+    }
+  }
+  return false;
 }
 
 module.exports = double_to_one;

@@ -1,30 +1,28 @@
 'use strict';
 
 function get_integer_interval_2(number_a, number_b) {
-  var result = [];
-    if(number_a < number_b){
-    	//自增的偶数区间
-    	for(var i=number_a;i<=number_b;i++){
-    		if(i%2==0){
-    			result.push(i);
-    		}
-    	}
-    } else if(number_a > number_b){
-    	//自减的偶数区间
-    	for(var i=number_a;i>number_b;i--){
-    		if(i%2==0){
-    			result.push(i);
-    		}
-    	}
+    let resultList = [];
+
+    if(number_a<number_b){
+        for(let i = number_a;i<=number_b;i++){
+            resultList = arrayJoin(i, resultList);
+        }
+    }else if(number_a>number_b){
+        for(let i = number_a;i>=number_b;i--){
+            resultList = arrayJoin(i, resultList);
+        }
     }else{
-    	//只含此偶数数字的数组[偶数]
-    	if(number_a%2==0){
-    		result.push(number_a)
-    	}
-    	
+        resultList = arrayJoin(number_a, resultList);
     }
-    return result;
+
+    return resultList;
+}
+
+function arrayJoin(i, resultList){
+    if(i % 2 == 0){
+        resultList.push(i);
+    }
+    return resultList
 }
 
 module.exports = get_integer_interval_2;
-
