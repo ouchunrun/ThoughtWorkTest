@@ -1,13 +1,10 @@
 'use strict';
 var map_to_four_multiples_add_one = function(collection){
-  	var result = [];
-
-  	for(var i of collection){
-  		var item = i*4+1
-  		result.push(item)
-  	}
-
-    return result;
+  	return collection.map(mapping);
 };
+
+function mapping(element, index, array){
+	return element*4+1;
+}
 
 module.exports = map_to_four_multiples_add_one;

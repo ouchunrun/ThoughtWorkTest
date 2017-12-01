@@ -1,10 +1,8 @@
 'use strict';
 var rank_desc = function(collection){
     
-    collection.sort(function(a,b){
-    	return a>b?1:-1
-    });
-    return collection;
+    //sort排序 从小到大
+    return collection.sort(function(a,b){return a>b?1:-1});
 };
 
 module.exports = rank_desc;

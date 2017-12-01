@@ -5,7 +5,7 @@ function choose_even(collection) {
 	return result;
 }
 
-function isOdd(element){
+function isOdd(element, index, array){
 	return (element % 2 == 0)?true:false;
 }
 

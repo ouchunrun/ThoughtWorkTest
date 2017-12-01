@@ -19,7 +19,6 @@ function create_updated_collection(collection_a, object_b) {
 	for(var j in result){
 	  	for(var i of object_b["value"]){
 	  		if(result[j].key==i){
-	  			//这是用了双等号，犯了个错
 	  			result[j].count = parseInt(result[j].count)-parseInt(result[j].count/3);
 	  		}
 	  	}

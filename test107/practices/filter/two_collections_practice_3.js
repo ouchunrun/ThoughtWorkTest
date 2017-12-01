@@ -4,19 +4,14 @@ function choose_divisible_integer(collection_a, collection_b) {
 	var result = [];
 
 	for(var i of collection_a){
-		var sameElment = jaudge(collection_b,i);
-		if(sameElment){
-			result.push(i);
-		}
+		if(jaudge(collection_b,i)) result.push(i);
 	}
 	return result;
 }
 
 function jaudge(collection_b,i){
 	for(var j of collection_b){
-		if(i % j == 0){
-			return true;
-		}
+		if(i % j == 0) return true;
 	}
 	return false;
 }

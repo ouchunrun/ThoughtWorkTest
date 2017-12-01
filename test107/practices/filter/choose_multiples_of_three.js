@@ -5,7 +5,7 @@ function choose_multiples_of_three(collection) {
 	return result;
 }
 
-function multiples(element){
+function multiples(element, index, array){
 	return (element % 3 == 0)?true:false;
 }
 

@@ -1,13 +1,10 @@
 'use strict';
 
 function collect_min_number(collection) {
-  	var result = collection[0];
-    for(var i of collection){
-    	if(i<result){
-    		result = i;
-    	}
-    }
-    return result;
+	//回调函数的返回值在下一次调用回调函数时作为 previousValue参数提供
+    return collection.reduce(function(prev, next){
+    	return prev<next?prev:next;
+    });
 }
 
 module.exports = collect_min_number;

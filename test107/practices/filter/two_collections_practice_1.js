@@ -1,13 +1,11 @@
 'use strict';
 
 function choose_common_elements(collection_a, collection_b) {
-	var result = [];
+	let result = [];
 
-	for(var i of collection_a){
-		for(var j of collection_b){
-			if(i == j){
-				result.push(i);
-			}
+	for(let i of collection_a){
+		for(let j of collection_b){
+			if(i == j) result.push(i);
 		}
 	}
 
