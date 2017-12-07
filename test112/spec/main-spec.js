@@ -41,10 +41,10 @@ describe('pos', function () {
     });
     
 
-    it("Judge Judge whether it is a favorable commodity", () =>{
+    it("Judge whether it is a favorable commodity", () =>{
         let result = main.judgeIsDiscount("ITEM000000");
         expect(result).toEqual(true);
-    })
+    });
 
 
     it('should print finall text', function () {

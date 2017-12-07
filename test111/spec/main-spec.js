@@ -17,7 +17,6 @@ describe('99_bottles_of_beer', function () {
 
     it('return when given the number more than 1', () => {
 
-        //使用console.log输出
         let number = 99;
         let str = "99 bottles of beer on the wall, 99 bottles of beer.\n" +
             "Take one down and pass it around, 98 bottles of beer on the wall.\n" +
@@ -225,7 +224,6 @@ describe('99_bottles_of_beer', function () {
 
     it('return when given the number equals to 2', () => {
 
-        //使用console.log输出
         let number = 2;
         var str = "2 bottles of beer on the wall, 2 bottles of beer.\n" +
             "Take one down and pass it around, 1 bottle of beer on the wall.\n" +
@@ -239,7 +237,6 @@ describe('99_bottles_of_beer', function () {
 
     it('return when given the number equals to 1', () => {
 
-        //使用console.log输出
         let number = 1;
         var str = "1 bottle of beer on the wall, 1 bottle of beer.\n" +
             "Take one down and pass it around, no more bottles of beer on the wall.\n" +
@@ -251,7 +248,6 @@ describe('99_bottles_of_beer', function () {
 
     it('return when given the number equals to 0', () => {
 
-        //使用console.log输出
         let number = 0;
         var str = "No more bottles of beer on the wall, no more bottles of beer.\n"+
                   "Go to the store and buy some more, 99 bottles of beer on the wall.\n";
@@ -261,7 +257,6 @@ describe('99_bottles_of_beer', function () {
 
      it('return when given the number less than 0', () => {
 
-        //使用console.log输出
         let number = -1;
         let result = main(number);
         expect(result).toEqual("error");
