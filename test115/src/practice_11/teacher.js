@@ -8,9 +8,17 @@ export class Teacher extends Person {
 
     introduce() {
       	if(this.klasses == undefined){
-        	  return super.introduce() + " I am a Teacher. I teach No Class." ;
+    	    return super.introduce() + " I am a Teacher. I teach No Class." ;
       	} else {
-        	  return super.introduce() + " I am a Teacher. I teach Class " + this.klasses[0].number + ", "+ this.klasses[1].number + "." ;
+            let teachClass = "";
+            let length = this.klasses.length;
+            for(let i in this.klasses){
+                teachClass += this.klasses[i].number;
+                if(i < length - 1){
+                    teachClass += ", ";
+                }
+            }   
+    	    return super.introduce() + " I am a Teacher. I teach Class " + teachClass + "." ;
       	}
     }
 

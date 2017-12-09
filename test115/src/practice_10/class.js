@@ -8,7 +8,6 @@ class Class{
 		if(student.klass.number == this.number){
 	        this.leader = student;
 	    } else {
-	        this.leader = null;
 	        console.log("It is not one of us.");
 	    }
 	}
@@ -19,10 +18,6 @@ class Class{
 
 	getDisplayName() {
 	    return "Class " + this.number;
-	}
-
-	isIn(){
-
 	}
 }
 
