@@ -92,7 +92,15 @@ function judgePrintFormat(promot){
 		}
 	}
 	//   欧春润,201414600127,汉,1,数学:100,语文:99,英语:98,编程:100
+	//   王志文,201414600132,汉,1,数学:99,语文:99,英语:98,编程:99
 
+	scoreList += getAverageAndMedian(allInfor);
+	console.log(scoreList);
+}
+
+
+function getAverageAndMedian(allInfor){
+	console.log(allInfor);
 	let allAverage = 0;
 	let list = [];
 	for(let k = 0;k<allInfor.length;k++){
@@ -110,9 +118,7 @@ function judgePrintFormat(promot){
 		median = list[index-1];
 	}
 
-	scoreList += "全班总分平均数："+ allAverage + "\n" + "全班总分中位数：" + median + "\n\n";
-	console.log(scoreList);
+	return "全班总分平均数："+ allAverage + "\n" + "全班总分中位数：" + median + "\n\n";
 }
-
 
 module.exports = main;
